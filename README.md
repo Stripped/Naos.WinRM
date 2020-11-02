@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/v9swcwxn8df3tbym?svg=true)](https://ci.appveyor.com/project/Naos-Project/naos-winrm)
+[![Build status](https://ci.appveyor.com/api/projects/status/v9swcwxn8df3tbym?svg=true)](https://ci.appveyor.com/project/Stripped/naos-winrm)
 
 Naos.WinRM
 ================
