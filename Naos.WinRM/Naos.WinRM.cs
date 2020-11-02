@@ -293,11 +293,13 @@ namespace Naos.WinRM
             string ipAddress, 
             string userName, 
             SecureString password, 
+            int port,
             bool autoManageTrustedHosts = false,
             long fileChunkSizeThresholdByteCount = 150000,
             long fileChunkSizePerSend = 100000,
             long fileChunkSizePerRetrieve = 100000)
         {
+            this.Port=port
             this.IpAddress = ipAddress;
             this.userName = userName;
             this.password = password;
@@ -424,6 +426,7 @@ namespace Naos.WinRM
 
         /// <inheritdoc />
         public string IpAddress { get; private set; }
+        public int Port { get; private set; }
 
         /// <inheritdoc />
         public void Reboot(bool force = true)
@@ -855,6 +858,7 @@ namespace Naos.WinRM
             sessionCommand.Parameters.Add("ComputerName", this.IpAddress);
             sessionCommand.Parameters.Add("Credential", powershellCredentials);
             sessionCommand.Parameters.Add("SessionOption", sessionOptionsObject);
+            sessionCommand.Parameters.Add("Port", this.Port);
             var sessionObject = RunLocalCommand(runspace, sessionCommand).Single().BaseObject;
             return sessionObject;
         }
