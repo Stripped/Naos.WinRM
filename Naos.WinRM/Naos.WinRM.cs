@@ -283,6 +283,7 @@ namespace Naos.WinRM
         /// <param name="ipAddress">IP address of machine to interact with.</param>
         /// <param name="userName">Username to use to connect.</param>
         /// <param name="password">Password to use to connect.</param>
+        /// /// <param name="port">Port for WinRM service on server.</param>
         /// <param name="autoManageTrustedHosts">Optionally specify whether to update the TrustedHost list prior to execution or assume it's handled elsewhere (default is FALSE).</param>
         /// <param name="fileChunkSizeThresholdByteCount">Optionally specify file size that will trigger chunking the file rather than sending as one file (150000 is default).</param>
         /// <param name="fileChunkSizePerSend">Optionally specify size of each chunk that is sent when a file is being chunked for send.</param>
@@ -299,7 +300,7 @@ namespace Naos.WinRM
             long fileChunkSizePerSend = 100000,
             long fileChunkSizePerRetrieve = 100000)
         {
-            this.Port=port
+            this.Port = port;
             this.IpAddress = ipAddress;
             this.userName = userName;
             this.password = password;
@@ -426,6 +427,7 @@ namespace Naos.WinRM
 
         /// <inheritdoc />
         public string IpAddress { get; private set; }
+        /// <inheritdoc />
         public int Port { get; private set; }
 
         /// <inheritdoc />
