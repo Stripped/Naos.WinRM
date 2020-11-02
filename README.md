@@ -20,6 +20,7 @@ var machineManager = new MachineManager(
     "10.0.0.1",
     "Administrator",
     "password".ToSecureString(),
+    5985,
     autoManageTrustedHosts: true);
 
 // will perform a user initiated reboot.
